@@ -11,7 +11,7 @@
 # Data: archive.ics.uci.edu/ml/datasets/Abalone
 # [sex, length, diameter, height, whole weight, shucked weight, viscera weight, shell weight, rings]
 # 
-# For sex, value can be F, M, or I (infant). Heaton uses one-of-n encoding so that
+# For sex, the value can be F, M, or I (infant). Heaton uses one-of-n encoding so that
 # [1, 0, 0, ...] = F, 
 # [0, 1, 0, ...] = M, and 
 # [0, 0, 1, ...] = I. 
@@ -32,7 +32,7 @@ def main():
     # Convert the lists into numpy arrays
     matrix = np.array(data)
 
-    # Create matrix A by selecting the first ten columns of our matrix and append a column of 1s
+    # Create matrix x by selecting the first ten columns of our matrix and append a column of 1s
     observation_matrix = matrix[:, :-1]
     ones_column = np.ones((len(observation_matrix), 1))
     x = np.concatenate((observation_matrix, ones_column), axis=1)
